@@ -2,4 +2,4 @@
 Simple Todo Application with React
 
 
-# Can be found in here: - https://lively-sable-3ee8ec.netlify.app/
+Can be found in here: - https://lively-sable-3ee8ec.netlify.app/
