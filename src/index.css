@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #8758ff;
+  /* overflow-y: hidden; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 span {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+label p {
+  width: 100%;
+}
+
+span {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.text-truncate {
+  width: 100%;
+  max-width: 6.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo-wrapper {
+  background: #1a1a40;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 0.313rem;
+}
+
+.todo-form {
+  width: 100%;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  border-right: none;
+  border-top-left-radius: 0.313rem;
+  border-bottom-left-radius: 0.313rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 18.75rem;
+  color: white;
+  z-index: 1;
+}
+
+.todo-input::placeholder {
+  color: #ffffff4d;
+}
+
+.todo-btn {
+  background: #8758ff;
+  color: white;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  border-top-right-radius: 0.313rem;
+  border-bottom-right-radius: 0.313rem;
+  z-index: 2;
+}
+
+.delete-modal-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  border-radius: 0.313rem;
+  margin: 0.625rem;
+}
+
+.cancel-modal-btn {
+  background: #8758ff;
+  color: white;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  border-radius: 0.313rem;
+  margin: 0.625rem;
+}
+
+.cancel-todo-btn {
+  background: #8758ff;
+  color: white;
+  border: none;
+  padding: 0.55rem;
+  margin-bottom: 0.625rem;
+  cursor: pointer;
+  border-radius: 0.313rem;
+  width: 100%;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #8758ff;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.313rem;
+  margin-bottom: 1rem;
+  max-width: 21.5rem;
+  cursor: pointer;
+}
+
+.fa-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fa-trash {
+  margin-left: 0.75rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-pen-to-square {
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-trash:hover {
+  transform: scale(1.2);
+}
+
+.fa-pen-to-square:hover {
+  transform: scale(1.2);
+}
+
+.fa-triangle-exclamation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.completed {
+  color: #c5aeff;
+  text-decoration: line-through;
+}
+
+button {
+  transition: all 0.3s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:hover {
+  transform: scale(1.1);
+  border-radius: 0.313rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  z-index: 10000;
+}
+
+.modal h3 {
+  color: #1a1a40;
+  margin-bottom: 0.75rem;
+}
+
+.modal-icon {
+  margin-top: 0.5rem;
+  border-bottom: 1px solid #1a1a40;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.button-group button {
+  background: #8758ff;
+  color: white;
+  border: 1px solid #1a1a40;
+  padding: 0.55rem;
+  cursor: pointer;
+  width: 6.25rem;
+}
+
+.button-group button:focus {
+  background: white;
+  color: #8758ff;
+}
+
+.button-group button:first-child {
+  border-top-left-radius: 0.313rem;
+  border-bottom-left-radius: 0.313rem;
+}
+
+.button-group button:last-child {
+  border-top-right-radius: 0.313rem;
+  border-bottom-right-radius: 0.313rem;
+}
+
+.back-to-top-button {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 999;
+  display: none;
+  padding: 0.625rem 1.25rem;
+  color: white;
+  opacity: 0.9;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.back-to-top-button.visible {
+  display: block;
+}
+
+/* styles for input element on screens smaller than 26.875rem wide */
+@media (max-width: 26.875rem) {
+  .todo-input {
+    width: 100%;
+    border: 1px solid #8758ff;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.313rem;
+  }
+
+  .todo-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.313rem;
+  }
+  .modal h3 {
+    font-size: 1rem;
+  }
+
+  .todo-wrapper {
+    width: 21.875rem;
+  }
+}
+
+/* styles for elements on screens smaller than 22.5rem wide */
+@media (max-width: 22.5rem) {
+  h1 span {
+    font-size: 1.4rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .todo-wrapper {
+    width: 17.5rem;
+  }
+}
+
+/* styles for elements on screens smaller than 17.813rem wide */
+@media (max-width: 17.813rem) {
+  h1 span {
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  span {
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .todo-wrapper {
+    width: 15.2rem;
+  }
+
+  .button-group button {
+    font-size: 0.8rem;
+  }
+
+  .button-group {
+    width: 100%;
+  }
+}
